@@ -118,7 +118,7 @@ install_package()
         (( ${#rvm_autoconf_flags[@]} == 0 ))
       then
         if
-          uname -s | __rvm_grep -iE 'cygwin|mingw|CYGWIN_NT-6\.1' >/dev/null
+          uname -s | __rvm_grep -iE 'cygwin*|mingw' >/dev/null
         then
           rvm_autoconf_flags=( -ivf )  # no symlinks on windows :(
         else
